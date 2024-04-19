@@ -4,9 +4,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-section ol li {
-  padding: 1rem;
-}
 :root {
   --defaultPadding: 2rem;
   --tertiaryFont: "Pacifico", sans-serif;
@@ -25,6 +22,8 @@ section ol li {
   --accentColor: rgb(15, 87, 45);
   --lightAccentColor: rgb(15, 87, 45);
   --heroBorder: black;
+  --alertBackground: white;
+  --alertBorder: transparent;
 }
 .darkmode {
   --textColor: #e5ebf5;
@@ -36,6 +35,7 @@ section ol li {
   --lightAccentColor: rgb(101, 125, 171);
   --secondaryBackgroundColor: #252422;
   --primaryBackgroundColor: #1a1918;
+  --alertBackground: #252422;
 }
 body {
   font-family: var(--primaryFont);
@@ -51,6 +51,12 @@ body.home {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+section ol li {
+  padding: 1rem;
+  background: var(--alertBackground);
+  color: var(--primaryColor);
+  border: 2px solid var(--alertBorder);
 }
 button {
   cursor: pointer;
