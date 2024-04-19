@@ -867,6 +867,7 @@ h2.heading {
 .orders-section .heading {
   width: fit-content;
   margin: 0 auto;
+  margin-top: 0;
   margin-bottom: 4rem;
 }
 .orders-table-container{
