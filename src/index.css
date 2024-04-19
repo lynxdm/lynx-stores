@@ -23,13 +23,17 @@ section ol li {
   --hoverColor: #2a296a;
   --primaryBackgroundColor: whitesmoke;
   --accentColor: rgb(15, 87, 45);
+  --heroBorder: black;
 }
 .darkmode {
   --textColor: #e5ebf5;
+  --heroBorder: transparent;
   --backgroundColor: #030507;
-  --primaryColor: #4571b0;
-  --secondaryColor: #2a296a;
-  --accentColor: #453588;
+  --primaryColor: #f9cdcd;
+  --secondaryColor: #515155;
+  --accentColor: rgb(26, 51, 96);
+  --secondaryBackgroundColor: #252422;
+  --primaryBackgroundColor: #1a1918;
 }
 body {
   font-family: var(--primaryFont);
@@ -307,7 +311,7 @@ h2.heading {
   width: 80%;
 }
 .hero-images img {
-  border: 2px solid var(--primaryColor);
+  border: 2px solid var(--heroBorder);
   object-fit: cover;
   object-position: top;
 }
