@@ -28,7 +28,7 @@ function Cart() {
           <h2 className='heading'>Your Cart</h2>
         </div>
         <div className='cart-details-flex'>
-          <div className="cart-table-overflow">
+          <div className='cart-table-overflow'>
             <table className='cart-table'>
               <thead>
                 <tr>
@@ -42,7 +42,8 @@ function Cart() {
               </thead>
               <tbody>
                 {state.cart.map((cartitem) => {
-                  const { id, image, amount, title, price, subtotal } = cartitem;
+                  const { id, image, amount, title, price, subtotal } =
+                    cartitem;
                   return (
                     <tr key={id} className='cart-item'>
                       <td>
@@ -61,7 +62,10 @@ function Cart() {
                         </div>
                       </td>
                       <td>
-                        <Link to={`/products/${id}`} className='cart-item-title'>
+                        <Link
+                          to={`/products/${id}`}
+                          className='cart-item-title'
+                        >
                           {title}
                         </Link>
                       </td>
@@ -73,7 +77,9 @@ function Cart() {
                           <button
                             className='decrease-btn'
                             onClick={() => {
-                              decreaseCartItem(id);
+                              if (amount > 1) {
+                                decreaseCartItem(id);
+                              }
                             }}
                           >
                             <AiOutlineMinus />
@@ -99,7 +105,7 @@ function Cart() {
             </table>
           </div>
           <article className='cart-totals'>
-            <h3 className="cart-totals-heading">Cart Totals</h3>
+            <h3 className='cart-totals-heading'>Cart Totals</h3>
             <table>
               <tbody>
                 <tr>

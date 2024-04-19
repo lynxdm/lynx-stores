@@ -53,7 +53,7 @@ function SingleProducts() {
     return (
       <ErrorMessage
         title={"error fetching data"}
-        link={`${pathname.slice(9)}`}
+        reload={true}
         redirectmsg={"try again"}
       />
     );

@@ -8,18 +8,16 @@ function About() {
         <div className='about-us-text'>
           <h2 className='heading'>About Us</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
-            itaque odit animi culpa cum vitae ipsum rem natus? Blanditiis quod
-            repudiandae aut tempore praesentium ducimus libero aliquam fuga
-            modi. Beatae autem tempora ad quis modi numquam sit excepturi
-            officia. Aspernatur ipsam, consequatur fugiat corporis id temporibus
-            repellat eveniet necessitatibus unde doloremque. Et veniam hic ex,
-            labore ullam laboriosam iste blanditiis quibusdam iure tempore odit
-            atque quidem? Unde dignissimos tempora esse rerum sapiente. Modi
-            culpa possimus sit doloribus rerum repellat suscipit consequatur
-            perferendis reprehenderit officia quia non inventore vero, et
-            molestias fuga tempora eaque vitae ipsam molestiae eligendi
-            doloremque! Quas, quos?
+            At Lynx Clothing, we celebrate the beauty of individuality and
+            embrace diversity in every stitch. Our brand is built on a
+            foundation of inclusivity, where every style is welcome and every
+            voice is heard. From our design process to our marketing campaigns,
+            we prioritize authenticity and originality, ensuring that each
+            garment tells its own unique story. We believe in clothing as a form
+            of self-expression, empowering people of all backgrounds to
+            confidently showcase their personal style. Join us in our journey to
+            redefine fashion norms and foster a community where everyone feels
+            seen, heard, and celebrated.
           </p>
         </div>
         <svg

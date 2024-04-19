@@ -25,7 +25,7 @@ function Home() {
     return (
       <ErrorMessage
         title={"error fetching data"}
-        link={""}
+        reload={true}
         redirectmsg={"try again"}
         hero={true}
       />
@@ -40,11 +40,10 @@ function Home() {
             <div className='hero-header'>WHY LYNX</div>
             <h2>Your fashion on steriods. Without the barriers.</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-              nostrum voluptatum ullam quibusdam tempore nihil quaerat debitis
-              quia enim pariatur eum nemo, quod magni ipsum dolorum nulla! Nisi,
-              quidem reiciendis omnis voluptates nobis consequuntur dolor
-              mollitia tempore! Laudantium, deserunt quas?
+              Unleash Your Style: Lynx Clothing - Where Fashion Roars! Discover
+              fierce, trend-setting apparel crafted to empower your confidence.
+              Join the pride and redefine your look with our premium quality
+              garments.
             </p>
             <Link to={"/products"} className='btn hero-products-link'>
               <p>Our products</p>

@@ -16,7 +16,7 @@ function Products() {
     return (
       <ErrorMessage
         title={"error fetching data"}
-        link={"products"}
+        reload={true}
         redirectmsg={"try again"}
       />
     );
