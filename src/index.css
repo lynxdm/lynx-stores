@@ -23,15 +23,17 @@ section ol li {
   --hoverColor: #2a296a;
   --primaryBackgroundColor: whitesmoke;
   --accentColor: rgb(15, 87, 45);
+  --lightAccentColor: rgb(15, 87, 45);
   --heroBorder: black;
 }
 .darkmode {
   --textColor: #e5ebf5;
-  --heroBorder: transparent;
+  --heroBorder: #1a1918;
   --backgroundColor: #030507;
   --primaryColor: #f9cdcd;
   --secondaryColor: #515155;
   --accentColor: rgb(26, 51, 96);
+  --lightAccentColor: rgb(101, 125, 171);
   --secondaryBackgroundColor: #252422;
   --primaryBackgroundColor: #1a1918;
 }
@@ -274,7 +276,7 @@ h2.heading {
   background: var(--secondaryBackgroundColor);
 }
 .hero-text {
-  width: 25%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -434,7 +436,8 @@ h2.heading {
 .price {
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--accentColor);
+  /* color: var(--accentColor); */
+  color: var(--lightAccentColor);
 }
 .home-see-more-btn {
   margin: 0 auto;
@@ -885,7 +888,7 @@ h2.heading {
 }
 .cancel-order-btn {
   font-size: 1rem;
-  color: black;
+  color: var(--primaryColor);
 }
 .cancel-order-btn:hover {
   color: var(--hoverColor);
