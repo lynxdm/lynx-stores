@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ErrorMessage from "../components/ErrorMessage";
 import { useGlobalContext } from "../context";
 import { MdOutlineCancel } from "react-icons/md";
 
 function Orders() {
-  const { orders, cancelOrder } = useGlobalContext();
+  const { orders, cancelOrder, toast } = useGlobalContext();
+
+  useEffect(() => {
+    if (orders.length > 0 && window.innerWidth < 1000) {
+      toast.info("scroll right for order details");
+    }
+  }, [orders]);
 
   if (orders.length < 1) {
     return (
@@ -20,7 +26,7 @@ function Orders() {
     <main>
       <section className='orders-section pad-section'>
         <h2 className='heading'>Your Orders</h2>
-        <div className="orders-table-container">
+        <div className='orders-table-container'>
           <table className='orders-table'>
             <thead>
               <tr>
@@ -41,7 +47,7 @@ function Orders() {
                   date: { minutes, hours, day, month, year },
                   state: { totalPrice, totalAmount },
                 } = item;
-  
+
                 const months = [
                   "Jan",
                   "Feb",
@@ -56,11 +62,11 @@ function Orders() {
                   "Nov",
                   "Dec",
                 ];
-  
+
                 const priceWithTax = parseFloat(
                   (totalPrice + totalPrice * 0.1).toFixed(2)
                 );
-  
+
                 return (
                   <tr key={id}>
                     <td>{name}</td>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ErrorMessage from "../components/ErrorMessage";
 import { Link } from "react-router-dom";
 import { BiMinusCircle } from "react-icons/bi";
@@ -6,10 +6,16 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useGlobalContext } from "../context";
 
 function Cart() {
-  const { state, increaseCartItem, decreaseCartItem, removeCartItem } =
+  const { state, increaseCartItem, decreaseCartItem, removeCartItem, toast } =
     useGlobalContext();
   const tax = parseFloat((state.totalPrice * 0.1).toFixed(2));
   const cartTotal = parseFloat((state.totalPrice + tax).toFixed(2));
+
+  useEffect(() => {
+    if (state.cart.length > 0 && window.innerWidth < 1000) {
+      toast.info("scroll right for cart details");
+    }
+  }, [state.cart]);
 
   if (state.cart.length < 1) {
     return (
