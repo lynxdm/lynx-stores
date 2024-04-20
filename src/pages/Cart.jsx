@@ -15,7 +15,7 @@ function Cart() {
     if (state.cart.length > 0 && window.innerWidth < 1000) {
       toast.info("scroll right for cart details");
     }
-  }, [state.cart]);
+  }, []);
 
   if (state.cart.length < 1) {
     return (

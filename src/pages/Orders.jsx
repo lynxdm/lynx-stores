@@ -10,7 +10,7 @@ function Orders() {
     if (orders.length > 0 && window.innerWidth < 1000) {
       toast.info("scroll right for order details");
     }
-  }, [orders]);
+  }, []);
 
   if (orders.length < 1) {
     return (
