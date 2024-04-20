@@ -68,7 +68,7 @@ function Checkout() {
               onChange={(e) => handleChange(e)}
             />
             <input
-              type='text'
+              type='email'
               className='email-input'
               placeholder='E-mail'
               name='email'

@@ -12,13 +12,18 @@ const getCart = () => {
 const initialState = {
   totalPrice: 0,
   totalAmount: 0,
-  cart: [],
-  initialRender: true,
+  cart: localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [],
 };
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("dark-theme")
+      ? true
+      : false
+  );
   const [orders, setOrders] = useState(
     localStorage.getItem("orders")
       ? JSON.parse(localStorage.getItem("orders"))
@@ -30,15 +35,19 @@ const AppProvider = ({ children }) => {
   }, [orders]);
 
   useEffect(() => {
-    if (state.initialRender) {
-      let storedCart = getCart();
-      if (storedCart) {
-        dispatch({ type: "INITIALIZE_CART", payload: storedCart });
-      }
-    } else {
-      localStorage.setItem("cart", JSON.stringify(state.cart));
-    }
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+    dispatch({ type: "INITIALIZE_CART", payload: state.cart });
   }, [state.cart]);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("darkmode");
+      localStorage.setItem("dark-theme", "true")
+    } else {
+      document.body.classList.remove("darkmode");
+      localStorage.removeItem("dark-theme")
+    }
+  }, [darkMode]);
 
   const updateCartList = (cartItem) => {
     let cartList = state.cart;
@@ -84,14 +93,6 @@ const AppProvider = ({ children }) => {
     setOrders(newOrders);
     toast.success("Your order has been cancelled");
   };
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("darkmode");
-    } else {
-      document.body.classList.remove("darkmode");
-    }
-  }, [darkMode]);
 
   return (
     <AppContext.Provider

@@ -1,22 +1,28 @@
 const updateTotals = (payload) => {
-  let { totalPrice, totalAmount } = payload.reduce(
-    (cartTotal, cartItem) => {
-      const { amount, subtotal } = cartItem;
+  if (payload.length > 0) {
+    let { totalPrice, totalAmount } = payload.reduce(
+      (cartTotal, cartItem) => {
+        const { amount, subtotal } = cartItem;
 
-      cartTotal.totalPrice += subtotal;
-      cartTotal.totalAmount += amount;
+        cartTotal.totalPrice += subtotal;
+        cartTotal.totalAmount += amount;
 
-      return cartTotal;
-    },
-    {
-      totalPrice: 0,
+        return cartTotal;
+      },
+      {
+        totalPrice: 0,
+        totalAmount: 0,
+      }
+    );
+
+    totalPrice = parseFloat(totalPrice.toFixed(2));
+    return { totalAmount, totalPrice };
+  } else {
+    return {
       totalAmount: 0,
-    }
-  );
-
-  totalPrice = parseFloat(totalPrice.toFixed(2));
-
-  return { totalAmount, totalPrice };
+      totalPrice: 0,
+    };
+  }
 };
 
 const reducer = (state, action) => {
@@ -28,23 +34,18 @@ const reducer = (state, action) => {
 
     return {
       ...state,
-      cart: payload,
       totalAmount,
       totalPrice,
-      initialRender: false,
     };
   }
 
   if (type === "UPDATE_CART") {
-    let { totalPrice, totalAmount } = updateTotals(payload);
-
-    return { ...state, cart: payload, totalAmount, totalPrice };
+    return { ...state, cart: payload };
   }
 
   if (type === "REMOVE_CART_ITEM") {
     let newCart = cart.filter((item) => item.id !== payload);
-    let { totalPrice, totalAmount } = updateTotals(newCart);
-    return { ...state, cart: newCart, totalAmount, totalPrice };
+    return { ...state, cart: newCart };
   }
 
   if (type === "INCREASE_CART_ITEM") {
@@ -58,8 +59,7 @@ const reducer = (state, action) => {
       }
       return item;
     });
-    let { totalPrice, totalAmount } = updateTotals(newCart);
-    return { ...state, cart: newCart, totalAmount, totalPrice };
+    return { ...state, cart: newCart };
   }
 
   if (type === "DECREASE_CART_ITEM") {
@@ -73,12 +73,11 @@ const reducer = (state, action) => {
       }
       return item;
     });
-    let { totalPrice, totalAmount } = updateTotals(newCart);
-    return { ...state, cart: newCart, totalAmount, totalPrice };
+    return { ...state, cart: newCart };
   }
 
   if (type === "CLEAR_CART") {
-    return { ...state, cart: [], totalAmount: 0, totalPrice: 0 };
+    return { ...state, cart: [] };
   }
 };
 

@@ -690,6 +690,11 @@ h2.heading {
 .cart-table-overflow {
   width: 100%;
   overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primaryColor);
+}
+.cart-table-overflow:-webkit-scrollbar{
+  width: 2px;
 }
 .cart-table {
   width: 100%;
@@ -702,7 +707,7 @@ h2.heading {
 }
 .cart-table th,
 .cart-table td {
- min-width: 8rem;
+  min-width: 8rem;
   max-width: 10rem;
   border-bottom: 1px solid var(--secondaryColor);
   padding: 1rem 0.5rem;
@@ -835,14 +840,15 @@ h2.heading {
   flex-direction: column;
   gap: 1rem;
 }
-.shipping-information-form input[type="text"] {
+.shipping-information-form input[type="text"],
+.shipping-information-form input[type="email"] {
   height: 3rem;
   padding: 1rem;
   background: transparent;
   border: 1px solid var(--secondaryColor);
   color: var(--primaryColor);
 }
-.shipping-information-form input[type="text"]:focus {
+.shipping-information-form input:focus {
   border: 2px solid var(--primaryColor);
 }
 .place-your-order-btn {
@@ -918,7 +924,8 @@ h2.heading {
   font-size: 3rem;
   text-transform: uppercase;
 }
-.error-section a, .error-section button {
+.error-section a,
+.error-section button {
   border: 2px solid var(--primaryColor);
   text-transform: uppercase;
   padding: 0.8rem 2rem;
@@ -936,7 +943,8 @@ h2.heading {
   .error-section h2 {
     font-size: 2rem;
   }
-  .error-section a, .error-section button {
+  .error-section a,
+  .error-section button {
     font-size: 0.9rem;
   }
 }
