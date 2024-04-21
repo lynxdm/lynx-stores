@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tilt+Neon&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+/* GLOBAL STYLING */
 * {
   padding: 0;
   margin: 0;
@@ -77,6 +78,14 @@ img {
 section {
   padding: 0 var(--defaultPadding);
 }
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* NAVIGATION MENU */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -220,6 +229,8 @@ section {
   .home-navbar .sidebar {
     background: var(--secondaryBackgroundColor);
   }
+
+  /* SIDEBAR */
   .sidebar {
     display: block;
     height: 100vh;
@@ -261,15 +272,10 @@ section {
   }
 }
 
+/* HERO SECTION */
 h2.heading {
   font-size: 3rem;
   font-family: var(--secondaryFont);
-}
-.loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .hero-section {
   display: flex;
@@ -383,6 +389,7 @@ h2.heading {
   }
 }
 
+/* FEATURED PRODUCTS SECTION */
 .featured-products {
   position: relative;
   background: var(--primaryBackgroundColor);
@@ -499,6 +506,7 @@ h2.heading {
   }
 }
 
+/* ABOUT SECTION */
 .pad-section {
   padding: 4rem var(--defaultPadding);
 }
@@ -550,6 +558,7 @@ h2.heading {
   }
 }
 
+/* OUR PRODUCTS SECTION */
 .our-products-section {
   background: var(--primaryBackgroundColor);
 }
@@ -587,6 +596,7 @@ h2.heading {
   }
 }
 
+/* SINGLE PRODUCTS SECTION */
 .single-product-section {
   display: flex;
   flex-direction: row;
@@ -677,6 +687,7 @@ h2.heading {
   }
 }
 
+/* CART SECTION */
 .cart-section-heading {
   margin: 0 auto;
   margin-bottom: 4rem;
@@ -815,6 +826,7 @@ h2.heading {
   }
 }
 
+/* CHECKOUT SECTION */
 .checkout-main {
   padding: 1rem;
 }
@@ -877,6 +889,7 @@ h2.heading {
   }
 }
 
+/* ORDERS SECTION */
 .orders-section .heading {
   width: fit-content;
   margin: 0 auto;
@@ -907,6 +920,7 @@ h2.heading {
   color: var(--hoverColor);
 }
 
+/* ERROR SECTIOM */
 .error-section {
   height: 70vh;
   display: flex;

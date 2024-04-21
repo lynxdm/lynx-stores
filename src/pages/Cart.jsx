@@ -13,7 +13,7 @@ function Cart() {
 
   useEffect(() => {
     if (state.cart.length > 0 && window.innerWidth < 1000) {
-      toast.info("scroll left for cart details");
+      toast.info("Scroll left for cart details");
     }
   }, []);
 

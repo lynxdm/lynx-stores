@@ -23,7 +23,6 @@ function Products() {
   }
 
   if (products) {
-    // console.log(products);
     return (
       <main>
         <section className='our-products-section pad-section'>

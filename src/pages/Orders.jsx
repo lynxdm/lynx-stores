@@ -8,7 +8,7 @@ function Orders() {
 
   useEffect(() => {
     if (orders.length > 0 && window.innerWidth < 1000) {
-      toast.info("scroll left for order details");
+      toast.info("Scroll left for order details");
     }
   }, []);
 

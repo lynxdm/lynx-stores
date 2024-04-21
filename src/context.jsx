@@ -4,11 +4,6 @@ import reducer from "./reducer";
 
 const AppContext = React.createContext();
 
-const getCart = () => {
-  let list = localStorage.getItem("cart");
-  return list ? JSON.parse(list) : null;
-};
-
 const initialState = {
   totalPrice: 0,
   totalAmount: 0,
@@ -30,15 +25,18 @@ const AppProvider = ({ children }) => {
       : []
   );
 
+  // UPDATE STORED ORDERS
   useEffect(() => {
     localStorage.setItem("orders", JSON.stringify(orders));
   }, [orders]);
 
+  // UPDATE AND STORE CART
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
     dispatch({ type: "INITIALIZE_CART", payload: state.cart });
   }, [state.cart]);
 
+  // UPDATE THEME SETTINGS AND STORE FOR LATER RELOAD
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("darkmode");
@@ -51,8 +49,9 @@ const AppProvider = ({ children }) => {
 
   const updateCartList = (cartItem) => {
     let cartList = state.cart;
+    // check that cartItem is only added after an update
     if (cartItem.price > 0) {
-      let oldItem = cartList.find((item) => item.id === cartItem.id) || null;
+      let oldItem = cartList.find((item) => item.id === cartItem.id) || null; // replace and update an already existing cartItem
 
       if (oldItem) {
         cartList = cartList.map((item) => {
@@ -79,7 +78,7 @@ const AppProvider = ({ children }) => {
 
   const removeCartItem = (id) => {
     dispatch({ type: "REMOVE_CART_ITEM", payload: id });
-    toast.success("item removed from cart");
+    toast.success("Item removed from cart");
   };
 
   const placeOrder = (orderDetails) => {

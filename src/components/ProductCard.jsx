@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineShoppingCart } from "react-icons/hi";
 
 function ProductCard({ category, id, image, price, title, index }) {
   return (
@@ -11,7 +10,7 @@ function ProductCard({ category, id, image, price, title, index }) {
     >
       <li>
         <div className='img-container'>
-          <img src={image} alt={title} loading='lazy' />
+          <img src={image} alt={title} />
         </div>
         <div className='product-info'>
           <h3 className='title'>{title}</h3>

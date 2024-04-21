@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { IoMdMoon, IoIosSunny } from "react-icons/io";
-import { CgMenuLeft, CgClose } from "react-icons/cg";
+import { CgMenuLeft } from "react-icons/cg";
 
 function NavBar() {
   const { darkMode, setDarkMode, state } = useGlobalContext();

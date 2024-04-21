@@ -1,5 +1,4 @@
 import React from "react";
-// import "ldrs/ping";
 import { CircleLoader } from "react-spinners";
 import { useGlobalContext } from "../context";
 
@@ -9,7 +8,7 @@ function Loader() {
   return (
     <div className='loader'>
       <CircleLoader
-        size='60'
+        size='60px'
         color={darkMode ? "#f9cdcd" : "#420b56"}
       ></CircleLoader>
     </div>

@@ -1,3 +1,4 @@
+// UPDATES CART TOTALS AND RETURNS ZERO IF CART IS EMPTY
 const updateTotals = (payload) => {
   if (payload.length > 0) {
     let { totalPrice, totalAmount } = payload.reduce(
@@ -26,7 +27,7 @@ const updateTotals = (payload) => {
 };
 
 const reducer = (state, action) => {
-  const { totalPrice, totalAmount, cart } = state;
+  const {cart } = state;
   const { type, payload } = action;
 
   if (type === "INITIALIZE_CART") {

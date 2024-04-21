@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "ldrs/ping";
 import { Link } from "react-router-dom";
-
 import ProductCard from "../components/ProductCard";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
-
-import { useGlobalContext } from "../context";
-import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FiChevronsRight } from "react-icons/fi";
 import useFetch from "../hooks/useFetch";
-import heroimg1 from "../assets/heroimg1.jpg";
-import heroimg2 from "../assets/heroimg2.jpg";
-import heroimg3 from "../assets/heroimg3.jpg";
+import heroimg1 from "../assets/heroimg1.webp";
+import heroimg2 from "../assets/heroimg2.webp";
+import heroimg3 from "../assets/heroimg3.webp";
 
 function Home() {
   const { loading, data: products, error } = useFetch("?limit=4");
